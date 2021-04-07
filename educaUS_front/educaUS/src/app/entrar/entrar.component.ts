@@ -20,7 +20,15 @@ userLogin:UserLogin = new UserLogin()
   ) { }
 
   ngOnInit() {
+      
+    environment.token=''
+    environment.id=0
+    environment.nomeUsuario=''
+    environment.foto=''
+    environment.email=''
     window.scroll(0, 0)
+
+
   }
 
 
@@ -29,27 +37,16 @@ userLogin:UserLogin = new UserLogin()
     this.auth.entrar(this.userLogin).subscribe((resp:UserLogin)=> 
     {
       this.userLogin = resp
-
-    
-
       environment.token = this.userLogin.token
       environment.nomeUsuario = this.userLogin.nomeUsuario
       environment.id = this.userLogin.id
       environment.email = this.userLogin.email
-      
-
-
-    
       this.router.navigate(['/feed']) 
-
-
     }, erro => {
       if(erro.status == 500){
         alert('Usuário ou senha incorretos')
       }
     })
-
   }
-
-
+  
 }
