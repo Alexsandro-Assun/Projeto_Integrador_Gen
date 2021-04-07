@@ -104,4 +104,14 @@
 
 .titulo-centro{
 margin-left: 31%;
+font-size: 25pt;
+}
+
+.modalB{
+    width: 200px;
+}
+
+.bordaN{
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
 }
